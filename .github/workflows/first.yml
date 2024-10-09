@@ -9,13 +9,15 @@ jobs:
         - name: Checkout repo
           uses: actions/checkout@v4
 
-        - name: welcome Ahmmed
-          run: echo " hey bud"
+        - name: List and Read
+          run: |
+                 echo "my first one"
+                 ls -ltrals
+                 cat README.md
 
+       # - name: List file
+       #   run: 
 
-        - name: List file
-          run: ls
-
-        - name: Read the file
-          run: cat README.md
+        #- name: Read the file
+         # run: cat README.md
     
