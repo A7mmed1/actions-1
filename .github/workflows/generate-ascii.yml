@@ -34,6 +34,9 @@ jobs:
         
     deply_job_3: 
         needs: test_job_2
+        concurrency: 
+          group: prod-deploynet
+          cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
 
