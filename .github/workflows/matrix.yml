@@ -7,9 +7,17 @@
  jobs: 
     deploy:
       strategy:
+        fail-fast: false
+        max-parallel: 2
         matrix:
-            os: [ubuntu-latest, ubuntu-2-.04, windows-latest]
+            os: [ubuntu-latest, ubuntu-20-.04, windows-latest]
             images: [hello-world, alpine]
+            exclude:
+              - images: alpine
+                os: windwos-latest
+            include:
+              - mages: amd/64/alpine
+                os: ubuntu-20-.04
 
       runs-on: ${{ matrix.os }}
       steps:
